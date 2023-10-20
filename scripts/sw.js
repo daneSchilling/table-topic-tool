@@ -1,7 +1,7 @@
 var cacheStorageKey = 'version-token-v-1';
 
 var cacheList = [
-    'add every full url you will be pulling in'
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css'
 ];
 
 self.addEventListener('install', e => {
@@ -32,9 +32,11 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
         caches.match(e.request.url).then((response) => {
             if (response != null) {
+                console.log(e.request.url);
                 return response;
             }
 
+            console.log(e.request.url);
             return fetch(e.request.url);
         })
     );
