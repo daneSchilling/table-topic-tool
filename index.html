@@ -85,6 +85,14 @@
   <script src="js/sillyQuestions.js"></script>
   <script src="js/kidQuestions.js"></script>
   <script src="js/main.js"></script>
+
+  <script type='text/javascript'>
+    if (navigator.serviceWorker != null) {
+        navigator
+            .serviceWorker
+            .register('./scripts/sw.js');
+    }
+  </script>
 </body>
 
 </html>
